@@ -1,0 +1,9 @@
+<div>
+    <h2>Senast tillagda serie</h2>
+    @if(!string.IsNullOrEmpty(Context.Request.Cookies["Latest"])) {
+        <p>@Context.Request.Cookies["Latest"]</p>
+    } else {
+        <p>Ingen serie har lagts till senaste veckan</p>
+    }
+    
+</div>

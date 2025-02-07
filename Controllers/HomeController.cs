@@ -6,6 +6,7 @@ namespace TvShows.Controllers;
 
 public class HomeController : Controller {
 
+
     /* ----- Index view ----- */
     public IActionResult Index()
     {
@@ -15,13 +16,19 @@ public class HomeController : Controller {
     /* ----- View for added TvShows ----- */
     public IActionResult TvShows()
     {
-        return View();
+        ViewData["Title"] = "Serier jag har sett";
+        // Read json-file
+        string jsonStr = System.IO.File.ReadAllText("shows.json");
+        // Deserialize
+        var shows = JsonSerializer.Deserialize<List<TvshowModel>>(jsonStr);
+
+        return View(shows);
     }
 
-    /* ----- View for adding a Tvshow ----- */
+    /* ----- Views for adding a Tvshow ----- */
     public IActionResult AddTvShow() 
     {
-        ViewData["Title"] = "Lägg till serie";
+        ViewData["Title"] = "Lägg till en serie";
         return View();
     }
     [HttpPost]
@@ -44,8 +51,24 @@ public class HomeController : Controller {
                 // Write to file
                 System.IO.File.WriteAllText("shows.json", jsonStr);
             }
+
+            // Set Cooke with the title
+            HttpContext.Response.Cookies.Append("Latest", $"{model.Title}");
+
+            // Reset form
+            ModelState.Clear();
+
+            // Redirect to same page to update the partial
+            return RedirectToAction("AddTvShow");
         }
 
         return View();
     }
+
+    /* ------ Partial for showing last added show ------- */
+    public IActionResult LastAddedPartial()
+    {
+        return PartialView("_LastAdded");
+    }
+
 }
