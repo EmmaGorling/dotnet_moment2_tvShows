@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column; 
     font-family: "Roboto", serif;  
+    color: var(--text);
+    background-color: var(--darker-bg);
 }
 
 main {
@@ -18,4 +20,29 @@ footer {
     margin-top: auto;
     text-align: center;
     font-weight: 600;
+}
+h1 {
+    display: block;
+    text-align: center;
+}
+
+.mw50ch {
+    max-width: 50ch;
+    margin: auto;
+}
+.bg-dark {
+    background-color: var(--dark-bg);
+    padding: 1em 2em;
+}
+
+.lastAdd {
+    margin: 3em auto;
+    padding: 1em 2em;
+    text-align: center;
+}
+.lastAdd p {
+    margin-top: 2em;
+    padding: 1em;
+    font-size: 1.2em;
+    font-style: italic;
 }

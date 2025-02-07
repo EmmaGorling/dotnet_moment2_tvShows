@@ -1,0 +1,30 @@
+
+.header-container {
+    padding: 1em;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+nav {
+    width: 70%;
+    max-width: 30ch;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s linear, transform 0.3s linear;
+    display: inline-block;
+}
+nav a:hover {
+    color: var(--mint);
+    transform: scale(1.2);
+}

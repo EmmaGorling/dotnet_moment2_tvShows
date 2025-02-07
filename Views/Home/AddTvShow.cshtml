@@ -1,37 +1,46 @@
 @model TvShows.Models.TvshowModel
 
-<div>
-    <h1>Lägg til Tv-serie</h1>
+<div class="mw50ch">
+    <div class="bg-dark">
+        <h1>@ViewData["Title"]</h1>
 
-    <form method="post">
-        <label asp-for="Title">Tv-serie:</label>
-        <input asp-for="Title" type="text">
-        <span asp-validation-for="Title"></span>
-        <br>
-        <label asp-for="Genre">Genre:</label>
-        <select asp-for="Genre">
-            <option value="Dokumentär">Dokumentär</option>
-            <option value="Drama">Drama</option>
-            <option value="Komedi">Komedi</option>
-            <option value="Reality">Reality</option>
-            <option value="Skräck">Skräck</option>
-            <option value="Thriller">Thriller</option>
-            <option value="Övrigt">Övrigt</option>
-        </select>
-        <br>
-        <label asp-for="Rating">Betyg</label>
-        <input asp-for="Rating" type="range" min="0" max="5">
-        <div class="ratingScale">
-            <span>1</span>
-            <span>2</span>
-        </div>
-        <br>
-        <label asp-for="Review">Kommentar:</label>
-        <textarea asp-for="Review"></textarea>
-        <span asp-validation-for="Review"></span>
-        <br>
-        <input type="submit" value="Lägg till">
-    </form>
+        <form method="post" class="showForm">
+            <div class="formSect">
+                <label asp-for="Title">Tv-serie:</label>
+                <input asp-for="Title" type="text">
+                <span class="error" asp-validation-for="Title"></span>
+            </div>
+            <div class="formSect">
+                <label asp-for="Genre">Genre:</label>
+                <select asp-for="Genre">
+                    <option value="Dokumentär">Dokumentär</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Komedi">Komedi</option>
+                    <option value="Reality">Reality</option>
+                    <option value="Skräck">Skräck</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Övrigt">Övrigt</option>
+                </select>
+            </div>
+            <div class="formSect">
+                <label asp-for="Rating">Betyg</label>
+                <input asp-for="Rating" type="range" min="1" max="5">
+                <div class="ratingScale">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="formSect">
+                <label asp-for="Review">Kommentar:</label>
+                <textarea asp-for="Review"></textarea>
+                <span class="error" asp-validation-for="Review"></span>
+            </div>
+            <input type="submit" value="Lägg till">
+        </form>
+    </div>
 
     @await Html.PartialAsync("_LastAdded")
 </div>
