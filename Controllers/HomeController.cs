@@ -6,10 +6,10 @@ namespace TvShows.Controllers;
 
 public class HomeController : Controller {
 
-
-    /* ----- Index view ----- */
+    /* ------ Index view ------ */
     public IActionResult Index()
     {
+        ViewData["Title"] = "Välkommen hit!";
         return View();
     }
 
@@ -21,6 +21,9 @@ public class HomeController : Controller {
         string jsonStr = System.IO.File.ReadAllText("shows.json");
         // Deserialize
         var shows = JsonSerializer.Deserialize<List<TvshowModel>>(jsonStr);
+
+        // Send total shows
+        ViewBag.TotalShows = shows?.Count ?? 0;
 
         return View(shows);
     }

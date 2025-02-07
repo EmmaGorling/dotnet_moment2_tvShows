@@ -1,7 +1,17 @@
 @model List<TvShows.Models.TvshowModel>
 
-<h1>@ViewData["Title"]</h1>
+<div>
+    <h1>@ViewData["Title"]</h1>
+    <p>Totalt antal serier: @ViewBag.TotalShows</p>
 
-@foreach(var show in Model) {
-    <p>@show.Title</p>
-}
+    <section>
+        @foreach(var show in Model) {
+            <article>
+                <h3>@show.Title</h3>
+                <p>@show.Review</p>
+                <p>@show.Genre</p>
+                <span>@show.Rating</span>
+            </article>
+        }
+    </section>
+</div>
