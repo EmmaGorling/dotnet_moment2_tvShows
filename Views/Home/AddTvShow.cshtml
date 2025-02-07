@@ -1,1 +1,31 @@
-<h1>Lägg til Tv-serie</h1>
+@model TvShows.Models.TvshowModel
+
+<div>
+    <h1>Lägg til Tv-serie</h1>
+
+    <form method="post">
+        <label asp-for="Title">Tv-serie:</label>
+        <input asp-for="Title" type="text">
+        <span asp-validation-for="Title"></span>
+        <br>
+        <label asp-for="Genre">Genre:</label>
+        <select asp-for="Genre">
+            <option value="Dokumentär">Dokumentär</option>
+            <option value="Drama">Drama</option>
+            <option value="Komedi">Komedi</option>
+            <option value="Reality">Reality</option>
+            <option value="Skräck">Skräck</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Övrigt">Övrigt</option>
+        </select>
+        <br>
+        <label asp-for="Rating">Betyg</label>
+        <input asp-for="Rating" type="range" min="0" max="5">
+        <br>
+        <label asp-for="Review">Kommentar:</label>
+        <textarea asp-for="Review"></textarea>
+        <span asp-validation-for="Review"></span>
+        <br>
+        <input type="submit" value="Lägg till">
+    </form>
+</div>
