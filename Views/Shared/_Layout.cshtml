@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | Moment 2</title>
+    <!-- Add ons  -->
+    <link rel="stylesheet" href="~/css/main.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <p>logo</p>
+            <nav>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
+                    <li><a asp-controller="Home" asp-action="TvShows">Tv-Serier</a></li>
+                    <li><a asp-controller="Home" asp-action="AddTvShow">Lägg till serie</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+
+    </footer>
+</body>

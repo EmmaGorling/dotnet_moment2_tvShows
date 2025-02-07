@@ -8,10 +8,9 @@ app.UseStaticFiles();   // Enable static files
 app.UseRouting();       // Enable routing
 
 app.MapControllerRoute(
-    name: "deafult",
+    name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
-app.MapGet("/", () => "Hello World!");
 
 app.Run();
