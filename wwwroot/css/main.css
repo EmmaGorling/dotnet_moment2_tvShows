@@ -2,10 +2,12 @@
 @import url(normalizer.css);
 @import url(addTvShow.css);
 @import url(header.css);
+@import url(tvShows.css);
 
 :root {
     --darker-bg: rgb(15, 15, 15);
     --dark-bg: rgb(23, 25, 26);
     --text: rgb(233, 233, 233);
-    --mint: rgb(119, 248, 248);
+    --mint: rgb(153, 219, 219);
+    --star: #c7ce61;
 }

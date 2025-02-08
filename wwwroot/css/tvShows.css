@@ -1,0 +1,29 @@
+.show-list .total {
+    margin: 3em 0 3em;
+    font-weight: 600;
+}
+
+
+.show-list .show h3, .show-list .show p {
+    margin: 0;
+}
+.show-list .show .top, .show-list .show .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5em;
+}
+.show-list .show .rating {
+    display: block;
+    margin-top: 1em;  
+}
+.show-list .divider {
+    height: 2px;
+    width: 100%;
+    display: block;
+    background-color: var(--mint);
+    margin: 2em 0;
+}
+.fa-star {
+    color: var(--star);
+}

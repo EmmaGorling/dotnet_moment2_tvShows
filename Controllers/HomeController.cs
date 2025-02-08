@@ -13,6 +13,7 @@ public class HomeController : Controller {
         return View();
     }
 
+    [HttpGet("TvShows")]
     /* ----- View for added TvShows ----- */
     public IActionResult TvShows()
     {

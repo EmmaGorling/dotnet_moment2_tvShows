@@ -1,7 +1,15 @@
-<div>
-    <h1>@ViewData["Title"]</h1>
-    <div>
-        
+<div class="mw50ch">
+    <div class="bg-dark">
+        <h1>@ViewData["Title"]</h1>
+
+        <p>
+            Detta är en webbplats där man kan lägga till serier som man sett, 
+            samt ge dem ett betyg och en kommentar. Detta görs på sidan 
+            <a class="text-link" href="/Home/AddTvShow">Lägg till serie</a>
+        </p>
+        <p>
+            Dessa serier visas sedan på sidan <a class="text-link"  href="/TvShows">Tv-Serier</a>.
+        </p>
     </div>
     @await Html.PartialAsync("_LastAdded")
 </div>

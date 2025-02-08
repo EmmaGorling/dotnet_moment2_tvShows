@@ -28,3 +28,16 @@ nav a:hover {
     color: var(--mint);
     transform: scale(1.2);
 }
+
+.logo a {
+    color: var(--text);
+    font-style: italic;
+    font-size: 2em;
+    text-decoration: none;
+    transition: transform 0.3s linear, color 0.3s linear;
+    display: inline-block;
+}
+.logo a:hover {
+    color: var(--mint);
+    transform: scale(1.1);
+}

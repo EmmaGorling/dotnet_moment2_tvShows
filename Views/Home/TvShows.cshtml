@@ -1,17 +1,29 @@
 @model List<TvShows.Models.TvshowModel>
 
-<div>
-    <h1>@ViewData["Title"]</h1>
-    <p>Totalt antal serier: @ViewBag.TotalShows</p>
+<div class="mw50ch">
+    <div class="bg-dark show-list">
+        <h1>@ViewData["Title"]</h1>
 
-    <section>
-        @foreach(var show in Model) {
-            <article>
-                <h3>@show.Title</h3>
-                <p>@show.Review</p>
-                <p>@show.Genre</p>
-                <span>@show.Rating</span>
-            </article>
-        }
-    </section>
+        <p class="total">Totalt antal serier: @ViewBag.TotalShows</p>
+        <span class="divider"></span>
+
+        <section>
+            @foreach(var show in Model) {
+                <article class="show">
+                    <div class="top">
+                        <h3>@show.Title</h3>
+                        <p>Genre:<strong> @show.Genre</strong></p>
+                    </div>
+                    <p class="review">@show.Review</p>
+                    <span class="rating">
+                        @for (int i = 0; i < @show.Rating; i++)
+                            {
+                                <i class="fa-solid fa-star"></i>
+                            }
+                    </span>
+                </article>
+                <span class="divider"></span>
+            }
+        </section>
+    </div>
 </div>
